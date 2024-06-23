@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+$clr-dark-grayish: hsl(217, 19%, 35%);
+$clr-dark-blue: hsl(214, 17%, 51%);
+$clr-grayish-blue: hsl(212, 23%, 69%);
+$clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: $clr-light-grayish-blue;
+  font-family: 'Manrope';
+}
+
+ul {
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.card {
+  width: 330px;
+  border-radius: 10px;
+  background: white;
+
+  &__img img {
+    width: 100%;
+    height: 210px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: 0 20%;
+  }
+
+  &__info {
+    padding: 30px 30px 20px 30px;
+
+    .info__text {
+      margin-bottom: 35px;
+
+      .title {
+        font-weight: 700;
+        color: $clr-dark-grayish;
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+
+      .description {
+        font-weight: 500;
+        color: $clr-dark-blue;
+        width: 30ch;
+      }
+    }
+
+    .profile__info {
+
+      .profile__about {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .profile__img {
+          width: 35px;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+
+        .profile__name {
+          flex: 1;
+
+          .name {
+            color: $clr-dark-grayish;
+            font-weight: 700;
+          }
+
+          .date {
+            color: $clr-dark-blue;
+          }
+        }
+      }
+
+      .profile__icon {
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        .share-icon {
+          background: $clr-light-grayish-blue;
+          padding: 0.4em;
+          font-size: 18px;
+          border-radius: 50%;
+          color: $clr-dark-blue;
+
+          &:hover,
+          &:active {
+            background: $clr-dark-blue;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .share__box {
+    background-color: $clr-dark-grayish;
+    width: 330px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    right: -30px;
+    top: -19px;
+
+
+    p {
+      margin-left: 20px;
+      color: $clr-grayish-blue;
+      letter-spacing: 4px;
+    }
+
+    ul {
+      margin-left: 40px;
+      display: flex;
+      gap: 10px;
+
+      i {
+        font-size: 25px;
+      }
+    }
+
+    .profile__icon {
+      cursor: pointer;
+
+      .share-icon {
+        background: $clr-dark-blue;
+        padding: 0.4em;
+        font-size: 16px;
+        border-radius: 50%;
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 800px;
+    display: flex;
+
+    &__img img {
+      width: 330px;
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+    }
+
+    &__info {
+      padding: 30px 40px;
+
+      .info__text .title {
+        font-size: 20px;
+      }
+
+      .info__text .description {
+        width: 45ch;
+        line-height: 1.5;
+      }
+
+      .share__box {
+        display: flex;
+        width: 220px;
+        height: 50px;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        gap: 25px;
+        left: 269px;
+        top: -66px;
+
+        p {
+          margin-left: 0;
+          color: $clr-grayish-blue;
+          letter-spacing: 4px;
+        }
+
+        ul {
+          margin-left: 0;
+          display: flex;
+          gap: 10px;
+
+          i {
+            font-size: 25px;
+          }
+        }
+
+        &::before {
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 10px 10px 0 10px;
+          border-color: $clr-dark-grayish transparent transparent transparent;
+          position: absolute;
+          right: 105px;
+          top: 50px;
+        }
+      }
+    }
+  }
+}
