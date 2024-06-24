@@ -12,7 +12,7 @@ body {
   justify-content: center;
   height: 100vh;
   background: hsl(210, 46%, 95%);
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
 }
 
 ul {
